@@ -132,5 +132,6 @@ class Unet(nn.Module):
         output = self.up5(torch.cat([out_down1, out_up4], 1))
 
         return output
-
-
+from torchsummary import summary
+unet = Unet()
+summary(unet, input_size=(1, 224, 224))
